@@ -20,7 +20,7 @@ while True:
         
         if(digite_valor > 0):
             saldo = float(saldo) + digite_valor
-            extrato = extrato+f"Deposito R$ {digite_valor:.2f}#Saldo R$ {saldo:.2f}#"
+            extrato = extrato+f"Deposito R$ {digite_valor:.2f}#"
         else:
             print("Valor inválido! Use valor positivo!")
     
@@ -31,7 +31,7 @@ while True:
             print(f"Saque R${saque_dia:.2f}")
             numero_saques +=1
             saldo = saldo - saque_dia
-            extrato = extrato+f"Saque R$ {saque_dia:.2f}#Saldo R$ {saldo:.2f}#"
+            extrato = extrato+f"Saque R$ {saque_dia:.2f}#"
 
         elif(saque_dia < 0):
             print("Valor inválido! Use valor positivo!")
@@ -46,9 +46,10 @@ while True:
         print("==== Extrato ====")
         for i in extrato.split("#"):
             if(len(extrato) == 0):
-                print("Saldo R$ 00.00")
+                print("Conta sem operações financeiras!\n")
             else:
                 print(i)
+        print(f"Saldo R$ {saldo:.2f}\n=================")
 
     elif(opcao == "q"):
         print("Operação Finalizada!")
